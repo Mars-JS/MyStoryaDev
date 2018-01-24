@@ -9,8 +9,8 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return [<li key="1"><a href="/auth/facebook">Login With facebook</a></li>,
-                        <li key="2"><a href="/auth/google">Login With Google</a></li>
+                return [<li key="1"><a href="/auth/facebook"><img src={require('./img/ContinueWithFacebook2.png')} alt="Continue with facebook"/></a></li>,
+                        <li key="2"><a href="/auth/google"><img src ={require('./img/ContinueWithGoogle.png')} alt="Continue with +google" /></a></li>
                 ];
             default:
                 return [
