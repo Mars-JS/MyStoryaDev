@@ -3,7 +3,7 @@ import {Jumbotron} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 
 const Profile = props => (
-
+<div>
   <Jumbotron>
     <div className="row">
       <div className="col-sm-3">
@@ -28,5 +28,7 @@ const Profile = props => (
       </div>
     </div>
   </Jumbotron>
-
+</div>
 );
+
+default export Profile;
