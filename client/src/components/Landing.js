@@ -4,7 +4,7 @@ const Landing = () => {
     return (
         <div>MyStorya</div>,
         <div style={{ textAlign: 'center'}}>
-            <img src={require('./img/pileOfBooks1.png')} alt="MyStorya.com" />
+            <img src={require('./img/splashPage.png')} alt="MyStorya.com" />
         </div>
     );
 };
