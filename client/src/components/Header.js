@@ -33,7 +33,7 @@ class Header extends Component {
                         to={this.props.auth ? '/surveys' : '/'}
                         className="left brand-logo"
                 >
-                        Emaily
+                        <img src={require('./img/logoM2.png')}/>
                     </Link>
                     <ul className="right">
                         {this.renderContent()}
