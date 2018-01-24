@@ -9,7 +9,7 @@ class Header extends Component {
             case null:
                 return;
             case false:
-                return [<li key="1"><a href="/auth/facebook">Login With FaceBook</a></li>,
+                return [<li key="1"><a href="/auth/facebook">Login With facebook</a></li>,
                         <li key="2"><a href="/auth/google">Login With Google</a></li>
                 ];
             default:
@@ -18,7 +18,8 @@ class Header extends Component {
                     <li key="3" style={{ margin: '0 10px'}}>
                         Credits: {this.props.auth.credits}
                     </li>,
-                    <li key="2"><a href="/api/logout">Logout</a></li>
+                    <li key="2"><a href="/api/logout">Logout</a></li>,
+                    <li key="4"><a href="/api/profile">Profile</a></li>
                 ];
         }
     }
