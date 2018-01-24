@@ -13,7 +13,7 @@ class BookShelf extends Component {
 }
 
   componentDidUpdate() {
-    if(!this.state.skills){
+    if(!this.state.books || !this.state.popularbooks){
         this.loadResults();
     }
   }
