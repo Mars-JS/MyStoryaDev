@@ -31,4 +31,4 @@ const Profile = props => (
 </div>
 );
 
-default export Profile;
+export default Profile;
