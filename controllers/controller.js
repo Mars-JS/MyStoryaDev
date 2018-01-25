@@ -22,9 +22,17 @@ module.exports = {
   findByGenre: function(req, res) {
     db.Book
       .find(genre:req.params.genre)
+      .sort({views:1})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByViews: function(req, res) {
+    db.Book
+      .find(req.query)
+      .sort({views:1})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  }
   create: function(req, res) {
     db.Book
       .create(req.body)
