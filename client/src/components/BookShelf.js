@@ -3,8 +3,17 @@ import React, { Component } from "react";
 class BookShelf extends Component {
 
   state = {
-    books: [],
+    mybooks: [],
     popularbooks: [],
+    sports: [],
+    travel: [],
+    history: [],
+    culture: [],
+    music: [],
+    education: [],
+    fashion: [],
+    family: [],
+    cinema: []
 
   };
 
