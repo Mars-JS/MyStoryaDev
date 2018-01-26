@@ -1,5 +1,5 @@
 const path = require("path");
-const router = reqire("express").Router();
+const router = require("express").Router();
 const controller = require("../controllers/controller");
 
 router.route("/api/books/create")

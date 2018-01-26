@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Jumbotron} from 'react-bootstrap';
 import {Button} from 'react-bootstrap';
 
@@ -7,7 +7,7 @@ const Profile = props => (
   <Jumbotron>
     <div className="row">
       <div className="col-sm-3">
-        <img src={props.picture} />
+        <img src={props.picture} alt="profile pic" />
       </div>
       <div className="col-sm-9">
         <div className="row">
