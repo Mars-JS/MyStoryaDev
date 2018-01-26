@@ -3,7 +3,7 @@ const stripe = require('stripe')(keys.stripeSecretKey);
 const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = app => {
-    app.post('/api/stripe', requireLogin, async (req, res) => {
+    app.post('/api/stripe/email', requireLogin, async (req, res) => {
         const charge = await stripe.charges.create({
             amount: 500,
             currency: 'usd',
@@ -16,4 +16,19 @@ module.exports = app => {
 
         res.send(user);
     });
+    
+    app.post('/api/stripe/storage', requireLogin, async (req, res) => {
+        const charge = await stripe.charges.create({
+            amount: 500,
+            currency: 'usd',
+            description: '$5 for 10 books',
+            source: req.body.id
+        });
+
+        req.user.booksRemain += 10;
+        const user = await req.user.save();
+
+        res.send(user);
+    });
+
 };

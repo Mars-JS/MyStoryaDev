@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Payments from './Payments';
+import PayStorage from './PayStorage';
 
 class Header extends Component {
     renderContent(){
@@ -10,10 +11,14 @@ class Header extends Component {
                 return;
             case false:
                 return [<li key="1"><a href="/auth/facebook"><img src={require('./img/ContinueWithFacebook2.png')} alt="Continue with facebook"/></a></li>,
-                        <li key="2"><a href="/auth/google"><img src ={require('./img/ContinueWithGoogle.png')} alt="Continue with +google" /></a></li>
+                        <li key="2"><a href="/auth/google"><img src ={require('./img/ContinueWithGoogle.png')} alt="Continue with google" /></a></li>
                 ];
             default:
                 return [
+                    <li key="5"><PayStorage /></li>,
+                    <li key="6" style={{ margin: '0 10px' }}>
+                        New Books Available: {this.props.auth.booksRemain}
+                    </li>,
                     <li key="1"><Payments /></li>,
                     <li key="3" style={{ margin: '0 10px'}}>
                         Credits: {this.props.auth.credits}
@@ -33,7 +38,7 @@ class Header extends Component {
                         to={this.props.auth ? '/surveys' : '/'}
                         className="left brand-logo"
                 >
-                        <img src={require('./img/logoM2.png')}/>
+                        <img src={require('./img/logoM2.png')} alt="Mystorya"/>
                     </Link>
                     <ul className="right">
                         {this.renderContent()}
