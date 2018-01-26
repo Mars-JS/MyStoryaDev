@@ -11,9 +11,9 @@ router.route("/api/books/all")
 router.route("/api/books/genre")
   .get(controller.findByGenre);
 
-+router.route("/api/books/popular")
-  +  .get(controller.findByViews)
-  +
+router.route("/api/books/popular")
+    .get(controller.findByViews)
+  
   router.route("/api/books/user/:userid")
     .get(controller.findByUser);
 
