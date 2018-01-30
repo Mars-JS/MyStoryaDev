@@ -15,6 +15,7 @@ class PayStorage extends Component {
             >
                 <button className="btn">
                     Purchase more storage
+                     <i className="material-icons">payment</i>
                 </button>
             </StripeCheckout>
         );

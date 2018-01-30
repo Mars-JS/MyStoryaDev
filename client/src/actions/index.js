@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_SURVEYS } from './types';
+import { FETCH_USER, FETCH_SURVEYS, FETCH_BOOKS } from './types';
 
 export const fetchUser = () => async dispatch => {
     const res = await axios.get('/api/current_user');
@@ -30,4 +30,17 @@ export const handleTokenBooks = token => async dispatch => {
     const res = await axios.post('/api/stripe/storage', token);
 
     dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+export const submitBook = (values, history) => async dispatch => {
+    const res = await axios.post('/api/books', values);
+
+    history.push('/books');
+    dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+export const fetchBooks = () => async dispatch => {
+    const res = await axios.get('/api/books');
+
+    dispatch({ type: FETCH_BOOKS, payload: res.data });
 };

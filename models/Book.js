@@ -1,21 +1,21 @@
-/* const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const PageSchema = require('./Page');
+const PageSchema = require('./Page')
 
 const bookSchema = new Schema({
     title: { type: String, required: true },
-    genre: { type: String, required: true },
-    body: { type: String, required: true },
-    bookid: { type: Number, required: true },
-    userid: { type: Number, required: true },
-    pages: [pageSchema],
-    show: true,
-    deleted: false,
+    genre: [String],
+    cover: String,
+    synopis: String,
+    author: String,
+    backCover: String,
+    bookid: Number,
     _user: { type: Schema.Types.ObjectId, ref: 'User' },
-    dateCreated: Date
-
+    show: { type: Boolean, default: true },
+    dateCreated: Date,
+    pages: [PageSchema],
+    keyWords:[String],
+    pageCount: Number
 });
 
-const Book = mongoose.model("Book", bookSchema);
-module.exports = Book;
- */
+mongoose.model("books", bookSchema);
