@@ -9,7 +9,9 @@ const Dashboard = () => {
             <BookList />
             <div className="fixed-action-button">
                 <Link to="/books/new" className="btn-floating btn-large red">
-                    <i className="material-icons">book</i>
+                <Button>
+        <Glyphicon glyph="star" /> Star
+      </Button>
                 </Link>
             </div>
             <SurveyList />

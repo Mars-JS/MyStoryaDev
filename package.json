@@ -33,6 +33,9 @@
     "passport-google-oauth20": "^1.0.0",
     "path": "^0.12.7",
     "path-parser": "^3.0.1",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
     "sendgrid": "^5.2.3",
     "stripe": "^5.4.0"
   },
