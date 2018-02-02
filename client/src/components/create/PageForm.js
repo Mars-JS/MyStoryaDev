@@ -1,22 +1,16 @@
-// BookForm displays form for a user to add input
+//shows user an input field
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { Link } from 'react-router-dom';
-import BookField from './BookField';
-import bookFields from './bookFields';
+import PageField from './PageField';
+import pageFields from './pageFields';
 
-class BookForm extends Component {
-    renderFields() {
-        return _.map(bookFields, ({ label, name }) => {
+class PageForm extends Component {
+    renderFields(){
+        return _.map(pageFields, ({ label, name }) => {
             return (
-                <Field
-                    key={name}
-                    component={BookField}
-                    type="text"
-                    label={label}
-                    name={name}
-                />
+                <Field key={name} component={PageField} type="text" label={label} name={name} />
             );
         });
     }
@@ -24,12 +18,12 @@ class BookForm extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.props.handleSubmit(this.props.onBookSubmit)}>
+                <form onSubmit={this.props.handleSubmit(this.props.onPageSubmit)}>
                     {this.renderFields()}
                     <Link to="/surveys" className="red btn-flat white-text">
                         Cancel
                     </Link>
-                    <button type="submit" className="teal btn-flat white-text" >
+                    <button className="teal btn-flat right white-text" type="submit">
                         Next
                         <i className="material-icons right">done</i>
                     </button>
@@ -42,11 +36,9 @@ class BookForm extends Component {
 function validate(values) {
     const errors = {};
 
-    /* errors.synopsis = validateEmails(values.synopsis || ''); */
-
-    _.each(bookFields, ({ name }) => {
+    _.each(pageFields, ({ name, noValueError }) => {
         if (!values[name]) {
-            errors[name] = 'You must provide a value';
+            errors[name] = noValueError;
         }
     });
 
@@ -55,6 +47,6 @@ function validate(values) {
 
 export default reduxForm({
     validate,
-    form: 'bookForm',
+    form: 'pageForm',
     destroyOnUnmount: false
-})(BookForm);
+})(PageForm);
