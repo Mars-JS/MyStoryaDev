@@ -44,3 +44,16 @@ export const fetchBooks = () => async dispatch => {
 
     dispatch({ type: FETCH_BOOKS, payload: res.data });
 };
+
+export const submitPage = (values, history) => async dispatch => {
+    const res = await axios.post('/api/pages', values);
+
+    history.push('/pages');
+    dispatch({ type: FETCH_USER, payload: res.data });
+};
+
+/* export const fetchPages = () => async dispatch => {
+    const res = await axios.get('/api/pages');
+
+    dispatch({ type: FETCH_PAGES, payload: res.data });
+}; */

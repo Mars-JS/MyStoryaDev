@@ -15,7 +15,9 @@ const bookSchema = new Schema({
     dateCreated: Date,
     pages: [PageSchema],
     keyWords:[String],
-    pageCount: Number
+    pageCount: Number,
+    pagesLeft: {type: Number, default: 500}
 });
 
 mongoose.model("books", bookSchema);
+

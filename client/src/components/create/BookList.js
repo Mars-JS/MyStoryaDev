@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchBooks } from '../../actions';
 
@@ -28,6 +29,11 @@ class BookList extends Component {
                     </div>
                     <div className="card-action">
                         <a>Link: {book.cover}</a>
+                    </div>
+                    <div className="fixed-action-btn">
+                        <Link to="/pages/new" className="btn-floating btn-small red">
+                            <i className="material-icons">create</i>
+                        </Link>
                     </div>
                 </div>
             );

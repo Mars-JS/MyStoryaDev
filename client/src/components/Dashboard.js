@@ -11,9 +11,7 @@ const Dashboard = () => {
             <BookList />
             <div className="fixed-action-button">
                 <Link to="/books/new" className="btn-floating btn-large red">
-                <Button>
-        <Glyphicon glyph="star" /> Star
-      </Button>
+                    <i className="material-icons">add_circle</i>
                 </Link>
             </div>
             <SurveyList />

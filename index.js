@@ -8,7 +8,7 @@ require('./models/User');
 require('./models/Survey');
 require('./models/Book');
 require('./services/passport');
-require('./models/Page');
+
 
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI);
@@ -30,6 +30,7 @@ require('./routes/billingRoutes')(app);
 require('./routes/surveyRoutes')(app);
 /* require('./routes/bookRoutes')(app); */
 require('./routes/createRoutes')(app);
+require('./routes/pageRoutes')(app);
 
 if (process.env.NODE_ENV === 'production'){
     // express will serve up production assets

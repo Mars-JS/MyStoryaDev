@@ -9,6 +9,7 @@ import Dashboard from './Dashboard';
 import SurveyNew from './surveys/SurveyNew';
 import Profile from './Profile';
 import BookNew from './create/BookNew';
+import PageNew from './create/PageNew';
 
 class App extends Component {
     componentDidMount(){
@@ -27,6 +28,7 @@ class App extends Component {
                         <Route path="/profile" component={Profile} />
                         <Route exact path="/books" component={Dashboard} />
                         <Route path="/books/new" component={BookNew} />
+                        <Route exact path="/pages/new" component={PageNew} />
                     </div>
                 </BrowserRouter>
             </div>

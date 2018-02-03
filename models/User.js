@@ -5,7 +5,8 @@ const userSchema = new Schema ({
     googleId: String,
     facebookId: String,
     credits: { type: Number, default: 0 },
-    booksRemain: {type: Number, default: 10 }
+    booksRemain: {type: Number, default: 4 },
+    currentBook: String
 });
 
 mongoose.model('users', userSchema);
