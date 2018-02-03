@@ -20,7 +20,7 @@ const Profile = props => (
           <h5>{props.followers}</h5>
           <p>followers</p>
           <h5>{props.following}</h5>
-          <p>following></p>
+          <p>following</p>
         </div>
         <div className="row">
           <h4>{props.name}</h4>
