@@ -2,7 +2,6 @@
 import _ from 'lodash';
 import React from 'react';
 import { connect } from 'react-redux';
-import PageField from './PageField';
 import pageFields from './pageFields';
 import { withRouter } from 'react-router-dom';
 import * as actions from '../../actions';

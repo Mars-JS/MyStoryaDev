@@ -4,9 +4,11 @@ import { reduxForm } from 'redux-form';
 import PageForm from './PageForm';
 import PageFormReview from './PageFormReview';
 
+import BookCurrent from './BookCurrent';
+
 class PageNew extends Component {
     state = { showPageReview: false };
-
+        
 renderContent(){
     if (this.state.showPageReview) {
         return (<PageFormReview 
@@ -14,14 +16,15 @@ renderContent(){
         />);
     }
 
-    return <PageForm 
+    return (<PageForm 
         onPageSubmit={() => this.setState({ showPageReview: true })}
-     />
+     />);
 }
 
     render() {
         return(
             <div>
+                <BookCurrent />
                 {this.renderContent()}
             </div>
         )

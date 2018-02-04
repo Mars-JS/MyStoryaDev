@@ -6,7 +6,7 @@ const userSchema = new Schema ({
     facebookId: String,
     credits: { type: Number, default: 0 },
     booksRemain: {type: Number, default: 4 },
-    currentBook: String
+    
 });
 
 mongoose.model('users', userSchema);

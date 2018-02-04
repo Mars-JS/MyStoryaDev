@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_SURVEYS, FETCH_BOOKS } from './types';
+import { FETCH_USER, FETCH_SURVEYS, FETCH_BOOKS, FETCH_PAGES, FETCH_ONE_BOOK } from './types';
 
 export const fetchUser = () => async dispatch => {
     const res = await axios.get('/api/current_user');
@@ -45,6 +45,12 @@ export const fetchBooks = () => async dispatch => {
     dispatch({ type: FETCH_BOOKS, payload: res.data });
 };
 
+export const fetchOneBook = () => async dispatch => {
+    const res = await axios.get('/api/books/');
+
+    dispatch({ type: FETCH_ONE_BOOK, payload: res.data });
+};
+
 export const submitPage = (values, history) => async dispatch => {
     const res = await axios.post('/api/pages', values);
 
@@ -52,8 +58,8 @@ export const submitPage = (values, history) => async dispatch => {
     dispatch({ type: FETCH_USER, payload: res.data });
 };
 
-/* export const fetchPages = () => async dispatch => {
+export const fetchPages = () => async dispatch => {
     const res = await axios.get('/api/pages');
 
     dispatch({ type: FETCH_PAGES, payload: res.data });
-}; */
+};

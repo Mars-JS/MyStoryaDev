@@ -26,7 +26,7 @@ class BookForm extends Component {
             <div>
                 <form onSubmit={this.props.handleSubmit(this.props.onBookSubmit)}>
                     {this.renderFields()}
-                    <Link to="/surveys" className="red btn-flat white-text">
+                    <Link to="/books" className="red btn-flat white-text">
                         Cancel
                     </Link>
                     <button type="submit" className="teal btn-flat white-text" >
@@ -42,7 +42,7 @@ class BookForm extends Component {
 function validate(values) {
     const errors = {};
 
-    /* errors.synopsis = validateEmails(values.synopsis || ''); */
+    /* errors.synopsis = validate(values.synopsis || ''); */
 
     _.each(bookFields, ({ name }) => {
         if (!values[name]) {

@@ -6,6 +6,7 @@ const requireStorage = require('../middlewares/requireStorage');
 const Book = mongoose.model('books');
 
 module.exports = app => {
+
     app.get('/api/books', requireLogin, async (req, res) => {
         const books = await Book.find({ _user: req.user.id }).select({
             pages: false

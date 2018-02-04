@@ -22,7 +22,7 @@ module.exports = app => {
             pageNumber,
             body,
             _user: req.user.id,
-            /* _book: req.book.id */
+            /* _book: this.props.bookid */
         });
         //save to db and subtract
         try {

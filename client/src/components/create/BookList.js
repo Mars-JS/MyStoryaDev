@@ -2,18 +2,22 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchBooks } from '../../actions';
+/* import * as actions from '../../actions'; */
 
 class BookList extends Component {
     componentDidMount() {
         this.props.fetchBooks();
     }
-
+        
     renderBooks() {
         return this.props.books.reverse().map(book => {
             return (
                 <div className="card darken-1" key={book._id}>
                     <div className="card-content">
                         <span className="card-title">{book.title}</span>
+                        <p>
+                        <span className="card-title">{book._id}</span>
+                        </p>
                         <p>
                             Page Count: {book.pageCount}
                         </p>
@@ -30,8 +34,8 @@ class BookList extends Component {
                     <div className="card-action">
                         <a>Link: {book.cover}</a>
                     </div>
-                    <div className="fixed-action-btn">
-                        <Link to="/pages/new" className="btn-floating btn-small red">
+                    <div className="fixed-action-btn" >
+                        <Link to="/pages/new" params={book} className="btn-floating btn-small red" onClick={() => this.setState({ currentBookId: book._id })} >
                             <i className="material-icons">create</i>
                         </Link>
                     </div>
