@@ -4,7 +4,7 @@ class MyComponentName extends Component {
     render() {
         return (
             <div>
-                Example Component
+                My Example Component b/c I'm soo tired of typing the same thing
             </div>
         )
     }

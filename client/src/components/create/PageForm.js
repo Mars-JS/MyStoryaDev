@@ -50,3 +50,4 @@ export default reduxForm({
     form: 'pageForm',
     destroyOnUnmount: false
 })(PageForm);
+

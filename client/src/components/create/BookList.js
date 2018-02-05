@@ -11,7 +11,9 @@ class BookList extends Component {
         
     renderBooks() {
         return this.props.books.reverse().map(book => {
+            
             return (
+                
                 <div className="card darken-1" key={book._id}>
                     <div className="card-content">
                         <span className="card-title">{book.title}</span>
@@ -32,10 +34,12 @@ class BookList extends Component {
                         </p>
                     </div>
                     <div className="card-action">
-                        <a>Link: {book.cover}</a>
+                        <a> Cover: {book.cover}</a>
                     </div>
                     <div className="fixed-action-btn" >
-                        <Link to="/pages/new" params={book} className="btn-floating btn-small red" onClick={() => this.setState({ currentBookId: book._id })} >
+                        <Link to="/pages/new"
+                            className="btn-floating btn-small red"
+                            onClick={() => this.setState({ bookid: book._id })} >
                             <i className="material-icons">create</i>
                         </Link>
                     </div>
