@@ -1,25 +1,22 @@
 const path = require("path");
 const router = require("express").Router();
-const controller = require("../controllers/controller");
+/* const controller = require("../controllers/controller"); */
+const _ = require('lodash');
+const Path = require('path-parser');
+const { URL } = require('url');
+const mongoose = require('mongoose');
+const requireLogin = require('../middlewares/requireLogin');
+const requireStorage = require('../middlewares/requireStorage');
 
-router.route("/api/books/create")
-  .post(controller.create);
+const Book = mongoose.model('books');
 
-router.route("/api/books/all")
-  .get(controller.findAll);
+module.exports = app => {
 
-router.route("/api/books/genre")
-  .get(controller.findByGenre);
+  app.get('/api/books/user', requireLogin, async (req, res) => {
+    const books = await Book.find({ _user: req.user.id }).select({
+      pages: false
+    });
 
-router.route("/api/books/popular")
-    .get(controller.findByViews)
-  
-  router.route("/api/books/user/:userid")
-    .get(controller.findByUser);
-
-router.route("/api/books/bookid/:bookid")
-  .get(controller.findById);
-
-router.use(function (req, res) {
-  res.sendFile(path.join(__dirname, "../build/index.html"));
-});
+    res.send(books);
+  });
+};

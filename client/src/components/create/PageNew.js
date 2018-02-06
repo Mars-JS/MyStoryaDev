@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 import PageForm from './PageForm';
 import PageFormReview from './PageFormReview';
-import BookList from './BookList';
+/* import BookList from './BookList'; */
 import BookCurrent from './BookCurrent';
 
 class PageNew extends Component {

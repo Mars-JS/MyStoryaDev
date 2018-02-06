@@ -11,7 +11,7 @@ class BookEdit extends Component {
         super();
         this.state = {
             activeTab: props.activeTab || 1,
-            bookid: props.book._id || 0
+            
         };
 
         this.handleSelect = this.handleSelect.bind(this);

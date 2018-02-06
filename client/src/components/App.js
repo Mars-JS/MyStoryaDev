@@ -10,6 +10,7 @@ import SurveyNew from './surveys/SurveyNew';
 import Profile from './Profile';
 import BookNew from './create/BookNew';
 import BookEdit from './create/BookEdit';
+import BookShelf from './BookShelf';
 
 class App extends Component {
     componentDidMount(){
@@ -29,6 +30,7 @@ class App extends Component {
                         <Route exact path="/books" component={Dashboard} />
                         <Route path="/books/new" component={BookNew} />
                         <Route exact path="/pages/new" component={BookEdit} />
+                        <BookShelf />
                     </div>
                 </BrowserRouter>
             </div>

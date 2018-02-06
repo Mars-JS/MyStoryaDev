@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
-import BookList from './BookList';
+
 import Profile from './../Profile';
 import { Link } from 'react-router-dom';
 

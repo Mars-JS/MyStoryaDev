@@ -1,5 +1,8 @@
 import React, { Component } from "react";
-import Book from "./Books";
+import { connect } from 'react-redux';
+import { fetchBooks, fetchBooksUser } from '../actions'
+/* import Books from "./Books"; */
+
 class BookShelf extends Component {
 
   state = {
@@ -18,6 +21,8 @@ class BookShelf extends Component {
   };
 
   componentDidMount() {
+    this.props.fetchBooksUser();
+    this.props.fetchBooks();
     this.loadResults();
 }
 
@@ -33,16 +38,32 @@ class BookShelf extends Component {
   };
 
 
-
+  renderBooksUser(){
+    return this.props.books.map(book => {
+      return(
+        <div key={book._id}>
+          <p>
+          <span>book_id: {book._id}</span>
+          </p>
+        </div>
+      )
+    });
+  }
 
   render(){
     return(
       //Render entire landing page
+      <div>
+        {this.renderBooksUser()}
+      </div>
     );
   }
 
 
-
 }
 
-export default BookShelf;
+function mapStateToProps({books}) {
+  return { books };
+}
+
+export default connect(mapStateToProps, { fetchBooksUser, fetchBooks })(BookShelf);
