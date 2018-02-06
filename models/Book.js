@@ -19,5 +19,5 @@ const bookSchema = new Schema({
     pagesLeft: {type: Number, default: 500}
 });
 
-mongoose.model("books", bookSchema);
-
+const Book = mongoose.model("Book", bookSchema);
+module.exports = Book;
