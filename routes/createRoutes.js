@@ -26,7 +26,7 @@ module.exports = app => {
             author,
             backCover,
             synopsis,
-            pages: pages.split(',').map(page => ({ page: page.trim() })),
+            /* pages: pages.split(',').map(page => ({ page: page.trim() })), */
             pageCount: 0,
             _user: req.user.id,
             dateCreated: Date.now(),
