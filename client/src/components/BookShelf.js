@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { fetchBooks, fetchBooksUser, fetchBooksCinema, fetchBooksCulture, fetchBooksEducation, fetchBooksFamily, fetchBooksFashion, fetchBooksHistory, fetchBooksMusic, fetchBooksSports, fetchBooksTravel } from '../actions';
+import Books from "./Books";
 /* import Books from "./Books"; */
 
 class BookShelf extends Component {
@@ -50,14 +51,14 @@ class BookShelf extends Component {
   renderBooksUser(){
     return this.props.books.map(book => {
       return(
-        <div key={book._id}>
+        <Books id1={book._id}>
           <p>
             <span>title: {book.title}</span>
           </p>
           <p>
           <span>book_id: {book._id}</span>
           </p>
-        </div>
+        </Books>
       )
     });
   }

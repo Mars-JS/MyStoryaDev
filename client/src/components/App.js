@@ -19,11 +19,11 @@ class App extends Component {
 
     render(){
         return(
-            <div className="container">
                 <BrowserRouter>
                     <div>
                         <Header />
                         <Route exact path="/" component={Landing} />
+                        <div className="container">
                         <Route exact path="/surveys" component={Dashboard} />
                         <Route path="/surveys/new" component={SurveyNew} />
                         <Route path="/profile" component={Profile} />
@@ -31,9 +31,9 @@ class App extends Component {
                         <Route path="/books/new" component={BookNew} />
                         <Route exact path="/pages/new" component={BookEdit} />
                         <BookShelf />
+                        </div>
                     </div>
                 </BrowserRouter>
-            </div>
         );
     }
 };

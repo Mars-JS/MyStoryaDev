@@ -1,17 +1,12 @@
 import React from 'react';
-
+import SplashPage from './landing-components/splashpage';
+import Search from './landing-components/searchbar';
 const Landing = () => {
     return (
-        <div>MyStorya</div>,
-        <div style={{ textAlign: 'center'}}>
-            <img src={require('./img/splashPage.png')} alt="MyStorya.com" />
-            <div
-                className="fb-like"
-                data-share="true"
-                data-width="450"
-                data-show-faces="true">
-            </div>
-        </div>
+      <div>
+      <SplashPage/>
+      <Search/>
+      </div>
     );
 };
 
